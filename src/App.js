@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
 
-export default class App extends Component{
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+
+class App extends Component{
   render(){
     return(
-      <div>
-        App
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/login' component={Login}></Route>
+          <Route path='/' component={Admin}></Route>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
+
+export default App

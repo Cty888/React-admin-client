@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+import memoryUtils from './utils/memoryUtils'
+import storageUtils from './utils/storageUtils'
+
+const user = storageUtils.getUser()
+if(user && user._id){
+    memoryUtils.user = user
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorker.unregister();
