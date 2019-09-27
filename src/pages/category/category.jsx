@@ -226,7 +226,7 @@ export default class Category extends Component{
                     visible={showStatus === 2}
                     onOk={this.updateCategory}
                     onCancel={this.handleCancel}
-                    >
+                >
                     <UpdateForm categoryName = {category.name} 
                         setForm = {(form) => {this.form = form}}
                     />

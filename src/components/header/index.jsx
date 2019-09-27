@@ -42,11 +42,10 @@ class Header extends Component{
             if(menu.key === path){
                 title = menu.title
             }else if(menu.children){
-                menu.children.forEach(item => {
-                    if(item.key === path){
-                        title = item.title
-                    }
-                })
+                const cItem = menu.children.find(cItem => path.indexOf(cItem.key) === 0)
+                if(cItem){
+                    title = cItem.title
+                }
             }
         })
         return title
@@ -99,7 +98,7 @@ class Header extends Component{
                     </div>
                     <div className="header-bottom-right">
                         <span className="time-now">{timeNow}</span>
-                        <img src={dayPictureUrl} />
+                        <img src={dayPictureUrl} alt='图片'/>
                         <span>{weather}</span>
                     </div>
                 </div>
